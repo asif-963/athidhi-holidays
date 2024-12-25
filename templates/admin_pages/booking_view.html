@@ -1,0 +1,65 @@
+{% extends "admin_pages/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="col-lg-11 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bookings</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered" style="width: 1400px;">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Category</th>
+                            <th>Package Name</th>
+                            <th>City</th>
+                            <th>Destination</th>
+                            <th>Adult</th>
+                            <th>Children</th>
+                            <th>Message</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.phone }}</td>
+                            <td>{{ booking.start_date }}</td>
+                            <td>{{ booking.end_date }}</td>
+                            <td>{{ booking.package_category }}</td>
+                            <td>{{ booking.related_package }}</td>
+                            <td>{{ booking.city }}</td>
+                            <td>{{ booking.tourist_place }}</td>
+                            <td>{{ booking.adults }}</td>
+                            <td>{{ booking.children }}</td>
+                        
+                            <td style="max-width: 200px; word-wrap: break-word; overflow-wrap: break-word; white-space: normal;">
+                                {{ booking.special_request }}
+                            </td>
+                            <td>
+                                <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger btn-sm">
+                                    <i class="mdi mdi-delete" aria-hidden="true"></i> Delete
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">No bookings available.</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

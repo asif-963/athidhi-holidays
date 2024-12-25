@@ -6,15 +6,16 @@ from django.contrib import messages
 import random
 
 
-from .models import ContactModel, District, Destination, ClientReview, Gallery, Folder, GalleryImage, Blog, Category, Package
-from .forms import ContactModelForm, DestinationForm, ClientReviewForm, GalleryForm, FolderForm, BlogForm, DistrictForm, CategoryForm, PackageForm
+from .models import ContactModel, District, Destination, ClientReview, Gallery, Folder, GalleryImage, Blog, Category, Package, Booking
+from .forms import ContactModelForm, DestinationForm, ClientReviewForm, GalleryForm, FolderForm, BlogForm, DistrictForm, CategoryForm, PackageForm, BookingForm
 
 
 
 def index(request):
     reviews = ClientReview.objects.all()
     blogs = Blog.objects.all()
-    return render(request, 'index.html',{'reviews':reviews, 'blogs':blogs})
+    packages = Package.objects.all()
+    return render(request, 'index.html',{'reviews':reviews, 'blogs':blogs, 'packages':packages})
 
 
 def about(request):
@@ -66,6 +67,39 @@ def contact(request):
     return render(request, 'contact.html', {'form': form})
 
 
+def booking(request):
+    categories = Category.objects.all()
+    districts = District.objects.all()
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            booking = form.save()
+            messages.success(request, 'Your booking has been successfully submitted.')
+            return redirect('booking')
+        else:
+            print("Form errors:", form.errors)  # Debugging: Print form errors
+    else:
+        form = BookingForm()
+
+    return render(request, 'booking.html', {'form': form, 'categories': categories, 'districts': districts})
+
+
+
+
+def get_related_packages(request):
+    category_id = request.GET.get('category')
+    packages = Package.objects.filter(category_id=category_id)
+    data = list(packages.values('id', 'name'))
+    return JsonResponse(data, safe=False)
+
+def get_tourist_places(request):
+    district_id = request.GET.get('district')
+    places = Destination.objects.filter(district_id=district_id)
+    data = list(places.values('id', 'name'))
+    return JsonResponse(data, safe=False)
+
+
 
 # Admin Side
 @csrf_protect
@@ -102,12 +136,26 @@ def contact_view(request):
     contacts = ContactModel.objects.all().order_by('-id')
     return render(request,'admin_pages/contact_view.html',{'contacts':contacts})
 
-
 @login_required(login_url='user_login')
 def delete_contact(request,id):
     contact = ContactModel.objects.get(id=id)
     contact.delete()
     return redirect('contact_view')
+
+
+
+# Booking 
+@login_required(login_url='user_login')
+def booking_view(request):
+    bookings = Booking.objects.all().order_by('-id')
+    return render(request,'admin_pages/booking_view.html',{'bookings':bookings})
+
+@login_required(login_url='user_login')
+def delete_booking(request,id):
+    booking = Booking.objects.get(id=id)
+    booking.delete()
+    return redirect('booking_view')
+
 
 # Add Destrict
 @login_required(login_url='user_login')

@@ -15,6 +15,10 @@ urlpatterns = [
         path('blogs/<int:blog_id>/', views.blog_details, name='blog_details'),
         path('gallery', views.gallery, name= 'gallery'),
         path('contact', views.contact, name= 'contact'),
+        path('booking', views.booking, name= 'booking'),
+        path('get_related_packages/', views.get_related_packages, name='get_related_packages'),
+        path('get_tourist_places/', views.get_tourist_places, name='get_tourist_places'),
+
         
         # Admin Login
         path('login',views.user_login,name='user_login'),
@@ -26,6 +30,11 @@ urlpatterns = [
         # Contact us
         path('contact_view',views.contact_view,name='contact_view'),
         path('delete_contact/<int:id>/',views.delete_contact,name='delete_contact'),
+
+        
+        # Booking
+        path('booking_view',views.booking_view,name='booking_view'),
+        path('delete_booking/<int:id>/',views.delete_booking,name='delete_booking'),
 
         # Add District
         path('add_district', views.add_district, name='add_district'),

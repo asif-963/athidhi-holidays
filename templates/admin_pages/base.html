@@ -39,7 +39,7 @@
 .load div {
     width: 25px;
     height: 25px;
-    background-color: #333;
+    background-color: #0a583d;
     margin-left: 5px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -90,9 +90,9 @@
       </button>
     </div>
     <div>
-      <a class="navbar-brand brand-logo" href="{% url 'dashboard' %}">
-        <img src="{% static 'img/logo.png' %}" alt="logo" style="height: 80px; width: 80px; background-color: black;" class="rounded-circle border shadow-sm mb-3">
-      </a>
+      <!-- <a class="navbar-brand brand-logo" href="{% url 'dashboard' %}">
+        <img src="{% static 'img/logo6.png' %}" alt="logo" style="height: 40px; width: 300px; background: linear-gradient(100deg, #022d1e, #013d28, #024c34);" class=" border shadow-sm mb-3">
+      </a> -->
     
     </div>
   </div>
@@ -237,7 +237,19 @@
     </li>
 
 
-
+    <li class="nav-item nav-category">Bookings</li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#contact225566" aria-expanded="false" aria-controls="contact">
+        <i class="menu-icon mdi mdi-book"></i>
+        <span class="menu-title">Bookings</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="contact225566">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{% url 'booking_view' %}">Bookings</a></li>
+        </ul>
+      </div>
+    </li>
 
 
 

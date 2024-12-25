@@ -1,5 +1,5 @@
 from django import forms
-from .models import ContactModel, District, Destination, ClientReview, Gallery, Folder, Blog, Package, Category
+from .models import ContactModel, District, Destination, ClientReview, Gallery, Folder, Blog, Package, Category, Booking
 
 
 
@@ -59,3 +59,11 @@ class PackageForm(forms.ModelForm):
     class Meta:
         model = Package
         fields = '__all__'
+
+# Booking
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['name', 'email', 'phone', 'start_date', 'end_date', 
+                  'package_category', 'related_package', 'city', 'tourist_place', 
+                  'adults', 'children', 'special_request']

@@ -30,12 +30,27 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link rel="icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
 </head>
+<style>
+    .packages-carousel .owl-nav .owl-prev,
+    .packages-carousel .owl-nav .owl-next {
+        display: none !important;
+    }
+    .InternationalTour-carousel .owl-dots {
+display: none !important;
+}
+.section-title {
+position: relative;
+display: inline-block;
+text-transform: uppercase;
+color: #3d5e53;
+}
+    </style>
 
 <body>
 
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border" style="width: 3rem; height: 3rem; color: black;" role="status">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color:#0a583d;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
@@ -43,7 +58,7 @@
     <!-- Spinner End -->
 
     <!-- Topbar Start -->
-    <div class="container-fluid px-5 d-none d-lg-block" style="background-color: black;">
+    <div class="container-fluid px-5 d-none d-lg-block" style="background: linear-gradient(560deg, #022d1e, #013d28, #024c34);">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -76,10 +91,10 @@
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background-color: black;">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34);">
             <a href="{% url 'index' %}" class="navbar-brand p-0">
                 <!-- <h1 class="m-0"><i class="fa fa-globe me-3"></i>Athidhi Holidays</h1> -->
-                <img src="{% static 'img/logo5.png' %}" alt="Logo" >
+                <img src="{% static 'img/logo6.png' %}" alt="Logo" >
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -93,6 +108,7 @@
                     <a href="{% url 'packages' %}" class="nav-item nav-link">Packages</a>
                     <a href="{% url 'blogs' %}" class="nav-item nav-link">Blog</a>
                     <a href="{% url 'gallery' %}" class="nav-item nav-link">Gallery</a>
+                    <a href="{% url 'booking' %}" class="nav-item nav-link">Booking</a>
                    
                     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                 </div>
@@ -122,28 +138,28 @@
                         </div>
                     </div>
                     <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                        <h5 class="section-about-title pe-3">About Us</h5>
-                        <h1 class="mb-4">Welcome to <span class="" style="color: #7e7777;">Athidhi Holidays</span></h1>
+                        <h5 class="section-about-title pe-3" style="color:#3d5e53;">About Us</h5>
+                        <h1 class="mb-4">Welcome to <span class="" style="color: #3d5e53;">Athidhi Holidays</span></h1>
                         <p class="mb-4">At Athidhi Holidays, we bring you the essence of Kerala's serene beauty with warm hospitality, comfortable stays, and breathtaking views. Whether you're here to relax or explore, we ensure a memorable experience.</p>
                         <p class="mb-4">Enjoy a perfect blend of comfort and adventure with our handpicked accommodations, personalized services, and curated experiences that showcase the best of nature and culture.</p>
                         <div class="row gy-2 gx-4 mb-4">
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Scenic Tea Plantation Views</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>Scenic Tea Plantation Views</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Homely and Comfortable Stays</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>Homely and Comfortable Stays</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Delicious Local Cuisine</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>Delicious Local Cuisine</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Reliable Vehicle Services</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>Reliable Vehicle Services</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Exciting Sightseeing Packages</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>Exciting Sightseeing Packages</p>
                             </div>
                             <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>24/7 Assistance</p>
+                                <p class="mb-0"><i class="fa fa-arrow-right  me-2" style="color: #0a583d;"></i>24/7 Assistance</p>
                             </div>
                         </div>
                         <!-- <a class="btn  rounded-pill py-3 px-5 mt-2" style="background-color: black; border-color: black; color: #fff;" href="{% url 'about' %}">Read More</a> -->
@@ -169,11 +185,11 @@
                         <div id="InternationalTab-2" class="">
                             <div class="InternationalTour-carousel owl-carousel">
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-1.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-1.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Hotel Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
                                         </div>
                                     </div>
                         
@@ -182,11 +198,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-2.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Flight Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
                                         
                                          
                                         </div>
@@ -196,11 +212,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-3.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-3.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Holiday Packages</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
                                         
                                         </div>
                                     </div>
@@ -209,11 +225,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-4.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-4.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Cabs and Local Transfers</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
                                         
                                         </div>
                                     </div>
@@ -222,11 +238,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Activities and Experiences</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
                                         
                                         </div>
                                     </div>
@@ -236,11 +252,11 @@
                                 </div>
                                
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Train and Bus Rentals</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Book trains or buses for group travel or tours.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Book trains or buses for group travel or tours.</p>
                                         
                                         </div>
                                     </div>
@@ -252,7 +268,7 @@
                         </div>
                         <div class="col-12">
                             <div class="text-center">
-                                <a class="btn  rounded-pill py-2 px-4 mt-4" href="{% url 'services' %}" style="background-color: black; border-color: black; color: #fff;">Load More</a>
+                                <a class="btn  rounded-pill py-2 px-4 mt-4" href="{% url 'services' %}" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34); color: #fff; border-color: #022d1e; ">Load More</a>
                             </div>
                         </div>
                     </div>
@@ -320,8 +336,7 @@
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Flight Bookings</a>
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Holiday Packages</a>
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Cabs and Local Transfers</a>
-                            <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Train and Bus Rentals
-s                            </a>
+                            <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Train and Bus Rentals  </a>
                             <!-- <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a> -->
                         </div>
                     </div>
@@ -406,7 +421,7 @@ s                            </a>
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #7e7777; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #0a583d; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
 
         
         <!-- JavaScript Libraries -->

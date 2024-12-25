@@ -38,7 +38,7 @@
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border" style="width: 3rem; height: 3rem; color: black;" role="status">
+            <div class="spinner-border" style="width: 3rem; height: 3rem; color: #0a583d;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <!-- Spinner End -->
 
         <!-- Topbar Start -->
-        <div class="container-fluid px-5 d-none d-lg-block" style="background-color: black;">
+        <div class="container-fluid px-5 d-none d-lg-block" style="background: linear-gradient(560deg, #022d1e, #013d28, #024c34);">
             <div class="row gx-0">
                 <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -79,10 +79,10 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background-color: black;">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34);">
                 <a href="{% url 'index' %}" class="navbar-brand p-0">
                     <!-- <h1 class="m-0"><i class="fa fa-globe me-3"></i>Athidhi Holidays</h1> -->
-                    <img src="{% static 'img/logo5.png' %}" alt="Logo" >
+                    <img src="{% static 'img/logo6.png' %}" alt="Logo" >
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -96,6 +96,7 @@
                         <a href="{% url 'packages' %}" class="nav-item nav-link">Packages</a>
                         <a href="{% url 'blogs' %}" class="nav-item nav-link">Blog</a>
                         <a href="{% url 'gallery' %}" class="nav-item nav-link">Gallery</a>
+                        <a href="{% url 'booking' %}" class="nav-item nav-link">Booking</a>
                        
                         <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
                     </div>
@@ -104,123 +105,317 @@
             </nav>
 
             <!-- Carousel Start -->
-            <div class="carousel-header">
-                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-container">
+                <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                        <li data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#videoCarousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#videoCarousel" data-bs-slide-to="2"></li>
+                        <li data-bs-target="#videoCarousel" data-bs-slide-to="3"></li>
                     </ol>
-                    <div class="carousel-inner" role="listbox">
+            
+                    <!-- Carousel Content -->
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
                         <div class="carousel-item active">
-                            <img src="{% static 'img/s5.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="video-slide">
+                                <video autoplay muted loop class="video-background">
+                                    <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                             <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Let's The World Together!</h1>
-                                    <p class="mb-5 fs-5">
-                                        Athidhi Holidays offers cozy stays, warm hospitality, and stunning views of Kerala's tea plantations. Enjoy authentic cuisine, peaceful retreats, and unforgettable adventures with us.
-                                    </p>
-                                    
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn  rounded-pill text-white py-3 px-5" style="background-color: black;" href="{% url 'about' %}">Discover Now</a>
-                                    </div>
-                                </div>
+                                <h4 style="color: #fff;">Explore The World</h4>
+                                <h1 style="color: #fff;">Let’s Travel Together</h1>
+                                <p>
+                                    Athidhi Holidays offers cozy stays, warm hospitality, and stunning views of Kerala's tea plantations.
+                                </p>
+                                <a class="btn rounded-pill" 
+                                style="background-color: transparent; border-color: #fff; color: #fff;" 
+                                href="{% url 'booking' %}">
+                                Book Now
+                             </a>
+                                <!-- <a class="btn  rounded-pill" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34); border-color: #024c34; color: #fff;"  href="{% url 'booking' %}">Book Now</a> -->
                             </div>
                         </div>
+            
+                        <!-- Slide 2 -->
                         <div class="carousel-item">
-                            <img src="{% static 'img/s2.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="video-slide">
+                                <video autoplay muted loop class="video-background">
+                                    <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                             <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
-                                    <p class="mb-5 fs-5">
-                                        Experience the charm of Kerala with Athidhi Holidays. We provide comfortable stays, breathtaking views, and authentic local flavors, making your getaway peaceful and memorable.
-                                    </p>
-                                    
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn  rounded-pill text-white py-3 px-5" style="background-color: black;" href="{% url 'about' %}">Discover Now</a>
-                                    </div>
-                                </div>
+                                <h4 style="color: #fff;">Experience Serenity</h4>
+                                <h1 style="color: #fff;">Find Your Perfect Tour</h1>
+                                <p>
+                                    Discover the beauty of Kerala with Athidhi Holidays, blending comfort with unforgettable adventure.
+                                </p>
+                                <!-- <a class="btn  rounded-pill" style="background-color: black; border-color: black; color: #fff;"  href="{% url 'booking' %}">Book Now</a> -->
+                                <a class="btn rounded-pill" 
+                                style="background-color: transparent; border-color: #fff; color: #fff;" 
+                                href="{% url 'booking' %}">
+                                Book Now
+                             </a>
                             </div>
                         </div>
+            
+                        <!-- Slide 3 -->
                         <div class="carousel-item">
-                            <img src="{% static 'img/s3.jpg' %}" class="img-fluid" alt="Image">
+                            <div class="video-slide">
+                                <video autoplay muted loop class="video-background">
+                                    <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                             <div class="carousel-caption">
-                                <div class="p-3" style="max-width: 900px;">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
-                                    <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
-                                    <p class="mb-5 fs-5">
-                                        Discover the beauty of Kerala with Athidhi Holidays. From scenic views to cozy accommodations and delicious local cuisine, we ensure a perfect blend of comfort and adventure.
-                                    </p>
-                                    
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <a class="btn-hover-bg btn  rounded-pill text-white py-3 px-5" style="background-color: black;" href="{% url 'about' %}">Discover Now</a>
-                                    </div>
-                                </div>
+                                <h4 style="color: #fff;">Adventure Awaits</h4>
+                                <h1 style="color: #fff;"> Where Do You Want to Go?</h1>
+                                <p>
+                                    Enjoy authentic cuisine, peaceful retreats, and stunning views with Athidhi Holidays.
+                                </p>
+                                <a class="btn rounded-pill" 
+                                style="background-color: transparent; border-color: #fff; color: #fff;" 
+                                href="{% url 'booking' %}">
+                                Book Now
+                             </a>
+                             
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-item">
+                            <div class="video-slide">
+                                <video autoplay muted loop class="video-background">
+                                    <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="carousel-caption">
+                                <h4 style="color: #fff;">Adventure Awaits</h4>
+                                <h1 style="color: #fff;"> Where Do You Want to Go?</h1>
+                                <p>
+                                    Enjoy authentic cuisine, peaceful retreats, and stunning views with Athidhi Holidays.
+                                </p>
+                                <a class="btn rounded-pill" 
+                                style="background-color: transparent; border-color: #fff; color: #fff;" 
+                                href="{% url 'booking' %}">
+                                Book Now
+                             </a>
+                             
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon btn "style="background-color: black;" aria-hidden="false"></span>
-                        <span class="visually-hidden">Previous</span>
+            
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                        <span class="carousel-control-next-icon btn" style="background-color: black;" aria-hidden="false"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
             </div>
-            <!-- Carousel End -->
-        </div>
-  
+            <style>
+                .carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #000; /* Ensures a fallback color */
+}
+
+.video-slide {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the screen without distortion */
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    color: white;
+    z-index: 10;
+    /* text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); */
+}
+
+.carousel-caption h4 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-caption .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 2rem;
+        color: #fff;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    .carousel-caption .btn {
+        padding: 0.5rem 1rem;
+    }
+}
+
+            </style>
+             <style>
+                .packages-carousel .owl-nav .owl-prev,
+                .packages-carousel .owl-nav .owl-next {
+                    display: none !important;
+                }
+                .InternationalTour-carousel .owl-dots {
+        display: none !important;
+    }
+    .section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #3d5e53;
+}
+                </style>
         <!-- Navbar & Hero End -->
 
-        <!-- About Start -->
-        <div class="container-fluid about py-5">
+         
+       
+      
+       
+            
+        
+        <!-- Packages End -->
+        <div class="container-fluid packages py-5">
             <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-5">
-                        <div class="h-100" >
-                            <img src="{% static 'img/s5.jpg' %}" class="img-fluid w-100 h-100" alt="">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Our Packages</h5>
+                    <h1 class="mb-4">Popular Packages</h1>
+                    <p class="mb-0">
+                        Discover travel tips, destination guides, and hidden gems with Athidhi Holidays. Plan your perfect getaway with ease!
+                    </p>
+                </div>
+                <div class="packages-carousel owl-carousel">
+                    {% for package in packages %}
+                    <div class="packages-item"> 
+                        <div class="packages-img">
+                            <a href="{% url 'package_details' package.id %}">
+                                <img src="{{ package.image.url }}" class="img-fluid w-100 rounded-top" style="height:250px;" alt="package Image">
+                            </a>
+                          
                         </div>
-                    </div>
-                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
-                        <h5 class="section-about-title pe-3">About Us</h5>
-                        <h1 class="mb-4">Welcome to <span class="" style="color: #7e7777;">Athidhi Holidays</span></h1>
-                        <p class="mb-4">At Athidhi Holidays, we bring you the essence of Kerala's serene beauty with warm hospitality, comfortable stays, and breathtaking views. Whether you're here to relax or explore, we ensure a memorable experience.</p>
-                        <p class="mb-4">Enjoy a perfect blend of comfort and adventure with our handpicked accommodations, personalized services, and curated experiences that showcase the best of nature and culture.</p>
-                        <div class="row gy-2 gx-4 mb-4">
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Scenic Tea Plantation Views</p>
+                        <div class="packages-content bg-light">
+                            <div class="p-4 pb-0">
+                                <h5 class="mb-0">
+                                    <a href="{% url 'package_details' package.id %}" class="text-dark text-decoration-none">{{ package.name }}</a>
+                                </h5>
+                                <!-- <p class="mb-4">{{ package.description|truncatechars:110|safe }}</p> --> <br>
                             </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Homely and Comfortable Stays</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Delicious Local Cuisine</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Reliable Vehicle Services</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>Exciting Sightseeing Packages</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="mb-0"><i class="fa fa-arrow-right  me-2"></i>24/7 Assistance</p>
+                            <div class="row rounded-bottom mx-0" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34);">
+                                <div class="col-6 text-start px-0">
+                                    <a href="{% url 'package_details' package.id %}" class="btn text-white py-2 px-4">Read More</a>
+                                </div>
+                                <div class="col-6 text-end px-0">
+                                    <a href="{% url 'booking' %}" class="btn text-white py-2 px-4">Book Now</a>
+                                </div>
                             </div>
                         </div>
-                        <a class="btn  rounded-pill py-3 px-5 mt-2" style="background-color: black; border-color: black; color: #fff;" href="{% url 'about' %}">Read More</a>
+                      
                     </div>
-                    
+                    {% endfor %}
                 </div>
             </div>
         </div>
+        
+
+
+
+
+        <div class="container-fluid py-5" style="background-color: #fefefe;">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <!-- Content Section -->
+                    <div class="col-lg-6">
+                        <h5 class="text-uppercase  mb-3" style="color: #3d5e53;">Why Choose Us</h5>
+                        <h1 class="mb-4">Experience <span style="color: #333;">Kerala’s Beauty</span> with <span style="color: #000;">Athidhi Holidays</span></h1>
+                        <p class="mb-4">c
+                            With over 20 years of experience, Athidhi Holidays promises journeys that go beyond the ordinary. 
+                            From tranquil tea plantations to luxurious stays, we curate experiences that showcase the true 
+                            essence of Kerala.
+                        </p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <i class="fa fa-star  me-2" style="color: #0a583d;"></i> 20+ Years of Travel Expertise
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-star  me-2" style="color: #0a583d;"></i> Handpicked Luxury Stays
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-star  me-2" style="color: #0a583d;"></i> Authentic Local Cuisine
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-star  me-2" style="color: #0a583d;"></i> Scenic & Memorable Tours
+                            </li>
+                            <li class="mb-2">
+                                <i class="fa fa-star  me-2" style="color: #0a583d;"></i> Personalized Travel Packages
+                            </li>
+                        </ul>
+                        <a href="{% url 'about' %}" class="btn  rounded-pill py-3 px-5" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34); color: #fff; border-color: #022d1e; ">
+                            Learn More
+                        </a>
+                    </div>
+        
+                    <!-- Image Section -->
+                    <div class="col-lg-6">
+                        <div class="position-relative">
+                            <img src="{% static 'img/s5.jpg' %}" class="img-fluid rounded shadow-lg" alt="Athidhi Holidays">
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
       
 
         <div class="container-fluid ExploreTour py-5">
             <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <div class="mx-auto text-center mb-5"  style="max-width: 900px;">
                     <h5 class="section-title px-3">Services</h5>
                     <h1 class="mb-4">Our Services</h1>
                     <p class="mb-0">
@@ -234,11 +429,11 @@
                         <div id="InternationalTab-2" class="">
                             <div class="InternationalTour-carousel owl-carousel">
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-1.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-1.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Hotel Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
                                         </div>
                                     </div>
                         
@@ -247,11 +442,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-2.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-2.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Flight Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
                                         
                                          
                                         </div>
@@ -261,11 +456,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-3.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-3.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Holiday Packages</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
                                         
                                         </div>
                                     </div>
@@ -274,11 +469,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-4.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-4.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Cabs and Local Transfers</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
                                         
                                         </div>
                                     </div>
@@ -287,11 +482,11 @@
                                     </div>
                                 </div>
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Activities and Experiences</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
                                         
                                         </div>
                                     </div>
@@ -301,11 +496,11 @@
                                 </div>
                                
                                 <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" alt="Image">
+                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded" style="height: 400px; object-fit: cover;" alt="Image">
                                     <div class="international-content">
                                         <div class="international-info">
                                             <h5 class="text-white text-uppercase mb-2">Train and Bus Rentals</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 12px;">Book trains or buses for group travel or tours.</p>
+                                            <p class="text-white" style="text-align: left; font-size: 16px;">Book trains or buses for group travel or tours.</p>
                                         
                                         </div>
                                     </div>
@@ -317,7 +512,7 @@
                         </div>
                         <div class="col-12">
                             <div class="text-center">
-                                <a class="btn  rounded-pill py-2 px-4 mt-4" href="{% url 'services' %}" style="background-color: black; border-color: black; color: #fff;">Load More</a>
+                                <a class="btn  rounded-pill py-2 px-4 mt-4" href="{% url 'services' %}" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34); color: #fff; border-color: #022d1e; ">Load More</a>
                             </div>
                         </div>
                     </div>
@@ -347,12 +542,12 @@
                                 </small>
                             </div>
                         </div>
-                        <div class="packages-content bg-light">
-                            <div class="p-4 pb-0">
+                        <div class="packages-content rounded-bottom bg-light">
+                            <div class="p-4 pb-0 ">
                                 <h5 class="mb-0">
                                     <a href="{% url 'blog_details' blog.id %}" class="text-dark text-decoration-none">{{ blog.name }}</a>
                                 </h5>
-                            </div>
+                            </div><br>
                         </div>
                     </div>
                     {% endfor %}
@@ -436,8 +631,7 @@
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Flight Bookings</a>
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Holiday Packages</a>
                             <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Cabs and Local Transfers</a>
-                            <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Train and Bus Rentals
-s                            </a>
+                            <a href="https://web.whatsapp.com/"><i class="fas fa-angle-right me-2"></i> Train and Bus Rentals                           </a>
                             <!-- <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a> -->
                         </div>
                     </div>
@@ -522,7 +716,7 @@ s                            </a>
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #7e7777; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
+        <a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #0a583d; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
 
         
         <!-- JavaScript Libraries -->

@@ -50,6 +50,22 @@ class Package(models.Model):
     def __str__(self):
         return self.name
 
+class Booking(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    package_category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='bookings')
+    related_package = models.ForeignKey(Package, on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
+    city = models.ForeignKey(District, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
+    tourist_place = models.ForeignKey(Destination, on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
+    adults = models.PositiveIntegerField()
+    children = models.PositiveIntegerField(default=0)
+    special_request = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Booking by {self.name} ({self.email})"
 
 
 class Blog(models.Model):
