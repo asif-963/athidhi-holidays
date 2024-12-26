@@ -347,9 +347,54 @@ s                            </a>
 </div>
 <!-- Copyright End -->
 
-<!-- Back to Top -->
-<a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #0a583d; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
+<a href="https://web.whatsapp.com/" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+  <style>
+    .whatsapp-btn {
+        background-color: #0a583d;
+        color: #fff !important;
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        display: flex;
+        width: 45px;
+        height: 45px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 99;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+    }
 
+    .whatsapp-btn::before,
+    .whatsapp-btn::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #0a583d;
+        border-radius: 50%;
+        animation: wave 2s infinite;
+        opacity: 0.7;
+    }
+
+    .whatsapp-btn::after {
+        animation-delay: 1s;
+    }
+
+    @keyframes wave {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.6);
+            opacity: 0;
+        }
+    }
+</style>
 
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

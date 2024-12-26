@@ -107,7 +107,6 @@ color: #3d5e53;
                 <div class="navbar-nav ms-auto py-0" >
                     <a href="{% url 'index' %}" class="nav-item nav-link " >Home</a>
                     <a href="{% url 'about' %}" class="nav-item nav-link active">About</a>
-                    <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
                     <a href="{% url 'destinations' %}" class="nav-item nav-link">Destinations</a>
                     <a href="{% url 'packages' %}" class="nav-item nav-link">Packages</a>
                     <a href="{% url 'blogs' %}" class="nav-item nav-link">Blog</a>
@@ -173,112 +172,122 @@ color: #3d5e53;
             </div>
         </div>
 
-        <div class="container-fluid ExploreTour py-5">
-            <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Services</h5>
+       
+
+<div class="container-fluid ExploreTour py-5">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+            <h5 class="section-title px-3">Services</h5>
                     <h1 class="mb-4">Our Services</h1>
                     <p class="mb-0">
                         At Athidhi Holidays, we offer a range of services to make your trip to Kerala unforgettable. From cozy accommodations to curated experiences, our services are designed to ensure a comfortable and memorable stay.
                     </p>
-                </div>
-                <div class="tab-class text-center">
-                  
-                    <div class="tab-content">
-                        
-                        <div id="InternationalTab-2" class="">
-                            <div class="InternationalTour-carousel owl-carousel">
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-1.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Hotel Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+              
+            </ul>
+            <div class="tab-content">
+                <div id="NationalTab-1" class="">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se1.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Hotel Bookings</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Experience comfortable stays in our well-furnished rooms with stunning tea mountain views.</p>
+                                   
                                     </div>
                                 </div>
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-2.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Flight Bookings</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
-                                        
-                                         
-                                        </div>
-                                    </div>
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-3.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Holiday Packages</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-4.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Cabs and Local Transfers</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Activities and Experiences</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                               
-                                <div class="international-item">
-                                    <img src="{% static 'img/explore-tour-5.jpg' %}" class="img-fluid w-100 rounded"  style="height: 400px; object-fit: cover;" alt="Image">
-                                    <div class="international-content">
-                                        <div class="international-info">
-                                            <h5 class="text-white text-uppercase mb-2">Train and Bus Rentals</h5>
-                                            <p class="text-white" style="text-align: left; font-size: 16px;">Book trains or buses for group travel or tours.</p>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="international-plus-icon">
-                                        <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="text-center">
-                                <a class="btn  rounded-pill py-2 px-4 mt-4" href="{% url 'services' %}" style="background: linear-gradient(100deg, #022d1e, #013d28, #024c34); color: #fff; border-color: #022d1e; ">Load More</a>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se2.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Flight Bookings</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Domestic and international flights, One-way, round trip, and multi-city bookings.</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se3.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Holiday Packages</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Customized vacation packages for domestic and international destinations, Themed tours (Honeymoon, family, beach holidays, etc.).</p>
+                                    
+                                    </div>
+                                </div>
+                       
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se4.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Cabs and Local Transfers</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Airport transfers, city tours, and intercity travel, Car rentals with driver for a day or multiple days.</p>
+                                    
+                                    </div>
+                                </div>
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se5.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Activities and Experiences</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Adventure activities (trekking, safaris, water sports), Cultural and sightseeing tours.</p>
+                                     </div>
+                                </div>
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="national-item">
+                                <img src="{% static 'img/se6.jpg' %}" class="img-fluid w-100 rounded" style="height: 350px; object-fit: cover;" alt="Image">
+                                <div class="national-content">
+                                    <div class="national-info">
+                                        <h5 class="text-white text-uppercase mb-2">Train and Bus Rentals</h5>
+                                        <p class="text-white" style="text-align: left; font-size: 16px;">Book trains or buses for group travel or tours.</p>
+                                    </div>
+                                </div>
+                                <div class="national-plus-icon">
+                                    <a href="https://web.whatsapp.com/" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+               
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</div>
 
         <div class="container-fluid testimonial py-5">
             <div class="container py-5">
@@ -326,10 +335,10 @@ color: #3d5e53;
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Quick Links</h4>
                             <a href="{% url 'about' %}"><i class="fas fa-angle-right me-2"></i> About</a>
-                            <a href="{% url 'services' %}"><i class="fas fa-angle-right me-2"></i> Services</a>
                             <a href="{% url 'blogs' %}"><i class="fas fa-angle-right me-2"></i> Blog</a>
                             <a href="{% url 'packages' %}"><i class="fas fa-angle-right me-2"></i> Packages</a>
                             <a href="{% url 'destinations' %}"><i class="fas fa-angle-right me-2"></i> Destinations</a>
+                            <a href="{% url 'booking' %}"><i class="fas fa-angle-right me-2"></i> Booking</a>
                             <!-- <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a> -->
                         </div>
                     </div>
@@ -425,9 +434,54 @@ color: #3d5e53;
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn  btn-primary-outline-0 btn-md-square back-to-top" style="background-color: #0a583d; color: #fff;"><i class="fa fa-arrow-up"></i></a>   
-
-        
+        <a href="https://web.whatsapp.com/" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+          <style>
+            .whatsapp-btn {
+                background-color: #0a583d;
+                color: #fff !important;
+                position: fixed;
+                right: 30px;
+                bottom: 30px;
+                display: flex;
+                width: 45px;
+                height: 45px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                z-index: 99;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: 0.5s;
+            }
+    
+            .whatsapp-btn::before,
+            .whatsapp-btn::after {
+                content: '';
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                border: 2px solid #0a583d;
+                border-radius: 50%;
+                animation: wave 2s infinite;
+                opacity: 0.7;
+            }
+    
+            .whatsapp-btn::after {
+                animation-delay: 1s;
+            }
+    
+            @keyframes wave {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1.6);
+                    opacity: 0;
+                }
+            }
+        </style>
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

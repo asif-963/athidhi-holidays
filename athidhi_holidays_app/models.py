@@ -56,7 +56,7 @@ class Booking(models.Model):
     phone = models.CharField(max_length=15)
     start_date = models.DateField()
     end_date = models.DateField()
-    package_category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='bookings')
+    package_category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
     related_package = models.ForeignKey(Package, on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
     city = models.ForeignKey(District, on_delete=models.CASCADE, related_name='bookings', null=True, blank=True)
     tourist_place = models.ForeignKey(Destination, on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
