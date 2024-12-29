@@ -162,29 +162,67 @@
                                 <!-- Start Date -->
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="startDate" data-target-input="nearest">
-                                        <input type="date" class="form-control bg-white border-0" id="start_date" name="start_date" value="{{ booking.start_date }}" required>
+                                        <input 
+                                            type="date" 
+                                            class="form-control bg-white border-0" 
+                                            id="start_date" 
+                                            name="start_date" 
+                                            value="{{ booking.start_date }}" 
+                                            min="" 
+                                            required>
                                         <label for="start_date">Start Date</label>
                                     </div>
                                 </div>
+                                
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const startDateInput = document.getElementById('start_date');
+                                        const today = new Date();
+                                        const formattedDate = today.toISOString().split('T')[0];
+                                        
+                                        // Set the min attribute to today's date to disable past dates including yesterday
+                                        startDateInput.min = formattedDate;
+                                    });
+                                </script>
+                                
                         
+                             
                                 <!-- End Date -->
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="endDate" data-target-input="nearest">
-                                        <input type="date" class="form-control bg-white border-0" id="end_date" name="end_date" value="{{ booking.end_date }}" required>
+                                        <input 
+                                            type="date" 
+                                            class="form-control bg-white border-0" 
+                                            id="end_date" 
+                                            name="end_date" 
+                                            value="{{ booking.end_date }}" 
+                                            min="" 
+                                            required>
                                         <label for="end_date">End Date</label>
                                     </div>
                                 </div>
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const endDateInput = document.getElementById('end_date');
+                                        const today = new Date();
+                                        const formattedDate = today.toISOString().split('T')[0];
+                                        
+                                        // Set the min attribute to today's date to disable past dates
+                                        endDateInput.min = formattedDate;
+                                    });
+                                </script>
                         
                                 <!-- Package Category -->
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-white border-0" id="packageCategory" name="package_category" onchange="updatePackages()">
-                                            <option value="">Select Category</option>
+                                            <option value="">Select Type</option>
                                             {% for category in categories %}
                                                 <option value="{{ category.id }}" {% if category.id == booking.package_category.id %}selected{% endif %}>{{ category.name }}</option>
                                             {% endfor %}
                                         </select>
-                                        <label for="packageCategory">Package Category</label>
+                                        <label for="packageCategory">Package Type</label>
                                     </div>
                                 </div>
                         
@@ -197,7 +235,7 @@
                                                 <option value="{{ package.id }}" {% if package.id == booking.related_package.id %}selected{% endif %}>{{ package.name }}</option>
                                             {% endfor %}
                                         </select>
-                                        <label for="relatedPackages">Related Packages</label>
+                                        <label for="relatedPackages">Select Experience</label>
                                     </div>
                                 </div>
                         
@@ -222,41 +260,105 @@
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <select class="form-select bg-white border-0" id="touristPlaces" name="tourist_place">
-                                            <option value="">Select Tourist Place</option>
+                                            <option value="">Select Destination </option>
                                         </select>
-                                        <label for="touristPlaces">Tourist Place</label>
+                                        <label for="touristPlaces">Destinations </label>
                                     </div>
                                 </div>
                         
                                <!-- Adults -->
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input 
-                                            type="number" 
-                                            class="form-control bg-white border-0" 
-                                            id="adults" 
-                                            name="adults" 
-                                            value="{{ booking.adults }}" 
-                                            min="1" 
-                                            required>
-                                        <label for="adults">Adults</label>
+                               <div class="col-md-6">
+                                <div class="form-floating position-relative d-flex align-items-center">
+                                    <input 
+                                        type="number" 
+                                        class="form-control bg-white border-0 text-center" 
+                                        id="adults" 
+                                        name="adults" 
+                                        value="{{ booking.adults }}" 
+                                        min="1" 
+                                        required 
+                                        style="padding-right: 90px;">
+                                    <label for="adults">Adults</label>
+                                    <div class="position-absolute d-flex" style="right: 10px; top: 0; height: 100%;">
+                                        <button 
+                                            type="button" 
+                                            class="btn " 
+                                            onclick="decreaseValue()" 
+                                            style=" width: 40px; height: 100%; margin-right: 2px;">
+                                            -
+                                        </button>
+                                        <button 
+                                            type="button" 
+                                            class="btn " 
+                                            onclick="increaseValue()" 
+                                            style=" width: 40px; height: 100%;">
+                                            +
+                                        </button>
                                     </div>
                                 </div>
+                            </div>
+                            
+                            <script>
+                                function increaseValue() {
+                                    const input = document.getElementById('adults');
+                                    input.value = parseInt(input.value || 1) + 1;
+                                }
+                            
+                                function decreaseValue() {
+                                    const input = document.getElementById('adults');
+                                    if (parseInt(input.value) > 1) {
+                                        input.value = parseInt(input.value) - 1;
+                                    }
+                                }
+                            </script>
+                            
 
                                 <!-- Children -->
                                 <div class="col-md-6">
-                                    <div class="form-floating">
+                                    <div class="form-floating position-relative d-flex align-items-center">
                                         <input 
                                             type="number" 
-                                            class="form-control bg-white border-0" 
+                                            class="form-control bg-white border-0 text-center" 
                                             id="children" 
                                             name="children" 
                                             value="{{ booking.children }}" 
                                             min="0"
-                                            required>
+                                            required 
+                                            style="padding-right: 90px;">
                                         <label for="children">Children</label>
+                                        <div class="position-absolute d-flex" style="right: 10px; top: 0; height: 100%;">
+                                            <button 
+                                                type="button" 
+                                                class="btn " 
+                                                onclick="decreaseChildren()" 
+                                                style=" width: 40px; height: 100%; margin-right: 2px;">
+                                                -
+                                            </button>
+                                            <button 
+                                                type="button" 
+                                                class="btn " 
+                                                onclick="increaseChildren()" 
+                                                style=" width: 40px; height: 100%;">
+                                                +
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                <script>
+                                    function increaseChildren() {
+                                        const input = document.getElementById('children');
+                                        input.value = parseInt(input.value || 0) + 1;
+                                    }
+                                
+                                    function decreaseChildren() {
+                                        const input = document.getElementById('children');
+                                        if (parseInt(input.value) > 0) {
+                                            input.value = parseInt(input.value) - 1;
+                                        }
+                                    }
+                                </script>
+                                
 
                         
                                 <!-- Special Request -->
