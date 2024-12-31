@@ -22,8 +22,6 @@ def about(request):
     reviews = ClientReview.objects.all()
     return render(request, 'about.html',{'reviews':reviews})
 
-def services(request):
-    return render(request, 'services.html')
 
 def destinations(request):
     districts = District.objects.prefetch_related('destinations').all()
